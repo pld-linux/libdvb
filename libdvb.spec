@@ -1,17 +1,18 @@
 Summary:	libdvb (formerly dvb-mpegtools)
-Summary(pl):	libdvb (formalnie dvd-mpegtools)
+Summary(pl):	libdvb (pakiet kiedy¶ znany jako dvd-mpegtools)
 Name:		libdvb
 Version:	0.5.0
+# 0.5.1 doesn't build with 2.6.0-test8 headers
 Release:	0.1
 License:	GPL
-Group:		Multimedia
-######		Unknown group!
+Group:		Applications/Multimedia
 Source0:	http://www.metzlerbros.org/dvb/%{name}-%{version}.tar.gz
 # Source0-md5:	220c81e0efbcfbb47dbc6f212f463318
 Patch0:		%{name}-install.patch
+Patch1:		%{name}-opt.patch
 URL:		http://www.metzlerbros.de/mbros/dvb/
-#BuildRequires:	-
-#Requires:	-
+#BuildRequires:	glibc-kernel-headers >= 2.6 (or 2.4 with DVB added?)
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,29 +21,51 @@ for their usage. libdvb is a library for switching channels using the
 Linux DVB API and keeping channel list for DVB-C, DVB-S and DVB-T.
 
 %description -l pl
-libdvb zawiera trzy biblioteki z przyk³adami ich u¿ycia. libdvb jest
-biblioteka prze³aczaj±c± kana³y u¿ywaj±c linux DVB API, i trzynaj±ca
-liste kana³ów dla DVB-C, DVB-S i DVB-T.
+Pakiet libdvb (kiedy¶ znany jako dvb-mpegtools) zawiera trzy
+biblioteki z przyk³adami ich u¿ycia. libdvb jest bibliotek±
+prze³aczaj±c± kana³y u¿ywaj±c API Linux DVB, i trzymaj±ca
+listê kana³ów dla DVB-C, DVB-S i DVB-T.
+
+%package devel
+Summary:	Header files and static libdvb libraries
+Summary(pl):	Pliki nag³ówkowe i statyczne biblioteki libdvb
+Group:		Development/Libraries
+# static only for now - doesn't require base, no -static
+
+%description devel
+Header files and static libdvb libraries.
+
+%description devel -l pl
+Pliki nag³ówkowe i statyczne biblioteki libdvb.
 
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CFLAGS="%{rpmcflags} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT \
-	PREFIX=$RPM_BUILD_ROOT\%{_prefix}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc dvb-mpegtools/README
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/%{name}*
-%{_includedir}/*.h
+
+%files devel
+%defattr(644,root,root,755)
+%doc README
+%{_libdir}/libdvb*.a
+%{_includedir}/*.h*
