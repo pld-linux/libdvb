@@ -46,8 +46,7 @@ Pliki nag³ówkowe i statyczne biblioteki libdvb.
 %{__make} \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CFLAGS="%{rpmcflags} -Wall" \
-	INCLUDES="-I. -I../include -I../../include -I/usr/src/linux/include"
+	CFLAGS="%{rpmcflags} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
