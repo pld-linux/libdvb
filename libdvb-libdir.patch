@@ -1,13 +1,13 @@
---- libdvb-0.5.5/config.mk.orig	2004-09-15 20:56:21.000000000 +0200
-+++ libdvb-0.5.5/config.mk	2005-02-27 20:48:28.163571312 +0100
+--- libdvb-0.5.5.1/config.mk.orig	2005-03-22 14:23:25.000000000 +0100
++++ libdvb-0.5.5.1/config.mk	2005-03-24 00:21:44.956036536 +0100
 @@ -2,6 +2,7 @@
  #
  
  PREFIX = /usr/local
 +LIBDIR = $(PREFIX)/lib
- VERSION = 0.5.5
+ VERSION = 0.5.5.1
  CFLAGS=-O2 -Wall -g
- INCLUDES=-I. -I../include -I../../include
+ INCLUDES=-I. -I../include 
 --- libdvb-0.5.5/Makefile.orig	2004-09-15 20:56:21.000000000 +0200
 +++ libdvb-0.5.5/Makefile	2005-02-27 20:48:53.279753072 +0100
 @@ -14,8 +14,8 @@
