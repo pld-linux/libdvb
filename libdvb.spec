@@ -23,7 +23,7 @@ Linux DVB API and keeping channel list for DVB-C, DVB-S and DVB-T.
 %description -l pl
 Pakiet libdvb (kiedy¶ znany jako dvb-mpegtools) zawiera trzy
 biblioteki z przyk³adami ich u¿ycia. libdvb jest bibliotek±
-prze³aczaj±c± kana³y u¿ywaj±c API Linux DVB, i trzymaj±ca
+prze³±czaj±c± kana³y u¿ywaj±c API Linux DVB, i trzymaj±ca
 listê kana³ów dla DVB-C, DVB-S i DVB-T.
 
 %package devel
