@@ -10,7 +10,7 @@ Source0:	http://www.metzlerbros.org/dvb/%{name}-%{version}.tar.gz
 Patch0:		%{name}-install.patch
 Patch1:		%{name}-opt.patch
 URL:		http://www.metzlerbros.de/mbros/dvb/
-BuildRequires:	glibc-kernel-headers >= 7:2.6
+BuildRequires:	linux-libc-headers
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
