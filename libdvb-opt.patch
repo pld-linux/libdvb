@@ -1,0 +1,15 @@
+--- libdvb-0.5.0/sample_progs/Makefile.orig	Fri Aug 29 16:26:19 2003
++++ libdvb-0.5.0/sample_progs/Makefile	Wed Nov 19 17:27:36 2003
+@@ -26,10 +26,10 @@
+ 	$(CXX) $(LIBS) $(INCLUDES) $(CFLAGS) -o cam_set cam_set.cc -ldvbci
+ 
+ cam_test: cam_test.cc ../libdvb/libdvb.a ../include/DVB.hh ../include/ci.hh
+-	$(CXX) $(LIBS) $(INCLUDES) -o cam_test cam_test.cc -ldvb -ldvbmpegtools
++	$(CXX) $(LIBS) $(INCLUDES) $(CFLAGS) -o cam_test cam_test.cc -ldvb -ldvbmpegtools
+ 
+ cam_menu: cam_menu.cc cam_menu.hh ../libdvb/libdvb.a ../include/DVB.hh
+-	$(CXX) $(LIBS) $(INCLUDES) -o cam_menu cam_menu.cc -ldvb
++	$(CXX) $(LIBS) $(INCLUDES) $(CFLAGS) -o cam_menu cam_menu.cc -ldvb
+ 
+ status_check: status_check.c
+ 	$(CC) $(INCLUDES) $(CFLAGS) -o status_check status_check.c
