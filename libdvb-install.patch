@@ -1,8 +1,12 @@
---- libdvb-0.5.0/dvb-mpegtools/Makefile.fix	2003-11-06 19:26:05.946692384 +0100
-+++ libdvb-0.5.0/dvb-mpegtools/Makefile	2003-11-06 19:30:49.633565424 +0100
-@@ -62,7 +62,7 @@
+--- libdvb-0.5.4/dvb-mpegtools/Makefile.orig	2004-01-26 11:59:47.000000000 +0100
++++ libdvb-0.5.4/dvb-mpegtools/Makefile	2004-01-27 21:46:00.422877480 +0100
+@@ -61,10 +61,10 @@
+ 	install -m 755 audiofilter $(PREFIX)/bin/
  	install -m 755 dvb-mpegtools_main $(PREFIX)/bin/
  	install -m 755 dvbaudio $(PREFIX)/bin/
+-	install -m 755 dvb_show_iamge $(PREFIX)/bin/
++	install -m 755 show_dvb_image $(PREFIX)/bin/
+ 	install -m 755 dia $(PREFIX)/bin/
  	for f in $(LINKS); do\
 -		ln -sf $(PREFIX)/bin/dvb-mpegtools_main $(PREFIX)/bin/$$f ;\
 +		cp -a $$f $(PREFIX)/bin/ ;\
