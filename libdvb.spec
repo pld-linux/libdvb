@@ -1,12 +1,12 @@
 Summary:	libdvb (formerly dvb-mpegtools)
 Summary(pl):	libdvb (pakiet kiedy¶ znany jako dvd-mpegtools)
 Name:		libdvb
-Version:	0.5.5
+Version:	0.5.5.1
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://www.metzlerbros.org/dvb/%{name}-%{version}.tar.gz
-# Source0-md5:	245e59b51ab8c64cd8d84a39262433d4
+# Source0-md5:	47612d2f8a4d4dee746a166d8b7f6f77
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-libdir.patch
 URL:		http://www.metzlerbros.de/mbros/dvb/
