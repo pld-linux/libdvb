@@ -1,23 +1,23 @@
---- libdvb-0.5.4/config.mk.orig	2004-01-26 11:59:48.000000000 +0100
-+++ libdvb-0.5.4/config.mk	2004-04-04 22:26:43.243713030 +0200
+--- libdvb-0.5.5/config.mk.orig	2004-09-15 20:56:21.000000000 +0200
++++ libdvb-0.5.5/config.mk	2005-02-27 20:48:28.163571312 +0100
 @@ -2,6 +2,7 @@
  #
  
  PREFIX = /usr/local
 +LIBDIR = $(PREFIX)/lib
- VERSION = 0.5.4
+ VERSION = 0.5.5
  CFLAGS=-O2 -Wall -g
  INCLUDES=-I. -I../include -I../../include
---- libdvb-0.5.4/Makefile.orig	2004-01-26 11:59:48.000000000 +0100
-+++ libdvb-0.5.4/Makefile	2004-04-04 22:27:17.941399559 +0200
+--- libdvb-0.5.5/Makefile.orig	2004-09-15 20:56:21.000000000 +0200
++++ libdvb-0.5.5/Makefile	2005-02-27 20:48:53.279753072 +0100
 @@ -14,8 +14,8 @@
  main: $(DVB_LIBS) $(TEST_PROGS) $(DVB-MPEGTOOLS)
  
  install: $(DVB_LIBS) $(HEADERS)
--	mkdir -p $(PREFIX)/lib
--	install -m 644 $(DVB_LIBS) $(PREFIX)/lib/
-+	mkdir -p $(LIBDIR)
-+	install -m 644 $(DVB_LIBS) $(LIBDIR)
- 	mkdir -p $(PREFIX)/include
- 	install -m 644 $(HEADERS) $(PREFIX)/include/
+-	mkdir -p $(DESTDIR)$(PREFIX)/lib
+-	install -m 644 $(DVB_LIBS) $(DESTDIR)$(PREFIX)/lib/
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	install -m 644 $(DVB_LIBS) $(DESTDIR)$(LIBDIR)
+ 	mkdir -p $(DESTDIR)$(PREFIX)/include
+ 	install -m 644 $(HEADERS) $(DESTDIR)$(PREFIX)/include/
  	make -C dvb-mpegtools install
