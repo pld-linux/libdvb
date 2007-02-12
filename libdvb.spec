@@ -1,5 +1,5 @@
 Summary:	libdvb (formerly dvb-mpegtools)
-Summary(pl):	libdvb (pakiet kiedy¶ znany jako dvd-mpegtools)
+Summary(pl.UTF-8):   libdvb (pakiet kiedyÅ› znany jako dvd-mpegtools)
 Name:		libdvb
 Version:	0.5.5.1
 Release:	2
@@ -20,23 +20,23 @@ libdvb (formerly dvb-mpegtools) contains three libraries with examples
 for their usage. libdvb is a library for switching channels using the
 Linux DVB API and keeping channel list for DVB-C, DVB-S and DVB-T.
 
-%description -l pl
-Pakiet libdvb (kiedy¶ znany jako dvb-mpegtools) zawiera trzy
-biblioteki z przyk³adami ich u¿ycia. libdvb jest bibliotek±
-prze³±czaj±c± kana³y u¿ywaj±c API Linux DVB, i trzymaj±ca
-listê kana³ów dla DVB-C, DVB-S i DVB-T.
+%description -l pl.UTF-8
+Pakiet libdvb (kiedyÅ› znany jako dvb-mpegtools) zawiera trzy
+biblioteki z przykÅ‚adami ich uÅ¼ycia. libdvb jest bibliotekÄ…
+przeÅ‚Ä…czajÄ…cÄ… kanaÅ‚y uÅ¼ywajÄ…c API Linux DVB, i trzymajÄ…ca
+listÄ™ kanaÅ‚Ã³w dla DVB-C, DVB-S i DVB-T.
 
 %package devel
 Summary:	Header files and static libdvb libraries
-Summary(pl):	Pliki nag³ówkowe i statyczne biblioteki libdvb
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i statyczne biblioteki libdvb
 Group:		Development/Libraries
 # static only for now - doesn't require base, no -static
 
 %description devel
 Header files and static libdvb libraries.
 
-%description devel -l pl
-Pliki nag³ówkowe i statyczne biblioteki libdvb.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i statyczne biblioteki libdvb.
 
 %prep
 %setup -q
