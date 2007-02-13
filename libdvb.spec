@@ -1,5 +1,5 @@
 Summary:	libdvb (formerly dvb-mpegtools)
-Summary(pl.UTF-8):   libdvb (pakiet kiedyś znany jako dvd-mpegtools)
+Summary(pl.UTF-8):	libdvb (pakiet kiedyś znany jako dvd-mpegtools)
 Name:		libdvb
 Version:	0.5.5.1
 Release:	2
@@ -28,7 +28,7 @@ listę kanałów dla DVB-C, DVB-S i DVB-T.
 
 %package devel
 Summary:	Header files and static libdvb libraries
-Summary(pl.UTF-8):   Pliki nagłówkowe i statyczne biblioteki libdvb
+Summary(pl.UTF-8):	Pliki nagłówkowe i statyczne biblioteki libdvb
 Group:		Development/Libraries
 # static only for now - doesn't require base, no -static
 
