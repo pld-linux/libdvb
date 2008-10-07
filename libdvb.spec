@@ -45,7 +45,7 @@ Pliki nagłówkowe i statyczne biblioteki libdvb.
 %patch2 -p1
 
 %build
-%{__make} \
+%{__make} -j1 \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CFLAGS="%{rpmcflags} -Wall"
